@@ -1,9 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from 'components/Views/Layout';
-import Home from 'components/Views/Home';
-import Movies from 'components/Views/Movies';
-import Movie from 'components/Views/Movie';
+import { Home, Movie, Movies } from 'components/Views';
 
 const App = () => {
   return (

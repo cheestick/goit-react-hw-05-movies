@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchTrendingMovies } from 'service/api';
 
-export default function Home() {
+export function Home() {
   const [queryResult, setQueryResult] = useState([]);
 
   useEffect(() => {
