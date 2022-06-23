@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 5px 10px;
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  max-width: 50rem;
+}
+
+.author {
+  margin: 0;
+  font-weight: 500;
+}
+
+.content {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.wrapper:active .content,
+.wrapper:focus .content {
+  white-space: initial;
+}

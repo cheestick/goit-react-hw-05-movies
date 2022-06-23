@@ -16,5 +16,10 @@ export function Cast() {
     fetchCredits();
   }, [movieId]);
 
-  return <CastList castList={cast} />;
+  return (
+    <>
+      <h3>Cast</h3>
+      <CastList castList={cast} />
+    </>
+  );
 }
