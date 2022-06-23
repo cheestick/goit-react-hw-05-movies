@@ -13,9 +13,9 @@ export function Movie() {
     async function fetchMovieInfo() {
       const data = await fetchMovieDetails(movieId);
       setMovieInfo(data);
-      console.log(data);
+      // console.log(data);
     }
-
+    console.log('Movie render >>>');
     fetchMovieInfo();
   }, [movieId]);
 
