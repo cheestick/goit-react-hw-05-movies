@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Layout from 'components/Views/Layout';
-import { Home, Movie, Movies } from 'components/Views';
+import Layout from 'Views/Layout';
+import { Cast, Home, Movie, Movies, Reviews } from 'Views';
 
 const App = () => {
   return (
@@ -11,8 +11,8 @@ const App = () => {
         <Route path="movies" element={<Movies />}>
           <Route index element={<h1>The Movies</h1>} />
           <Route path=":movieId" element={<Movie />}>
-            <Route path="cast" element={<h3>Cast</h3>} />
-            <Route path="review" element={<h3>Review</h3>} />
+            <Route path="cast" element={<Cast />} />
+            <Route path="review" element={<Reviews />} />
           </Route>
         </Route>
       </Route>
