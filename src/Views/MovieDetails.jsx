@@ -3,9 +3,9 @@ import { Outlet, useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { fetchMovieDetails } from 'service/api';
 import MovieCard from 'components/MovieCard';
-import s from './Movie.module.css';
+import s from './MovieDetails.module.css';
 
-export function Movie() {
+export function MovieDetails() {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
 
