@@ -15,3 +15,8 @@
 .extralink {
   text-transform: uppercase;
 }
+
+.backbutton {
+  margin: 10px;
+  font-size: 0.7rem;
+}
