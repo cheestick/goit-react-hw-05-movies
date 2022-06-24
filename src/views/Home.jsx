@@ -2,13 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchTrendingMovies } from 'service/api';
 
-export function Home() {
+export default function Home() {
   const [queryResult, setQueryResult] = useState([]);
 
   useEffect(() => {
     async function fetchMovies() {
       const data = await fetchTrendingMovies();
-      //   console.log(data);
       setQueryResult(data.results);
     }
 

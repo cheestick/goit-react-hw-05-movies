@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-export function Movies() {
+export default function Movies() {
   return (
     <>
       <Outlet />

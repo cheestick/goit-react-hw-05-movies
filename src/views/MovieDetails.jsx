@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { fetchMovieDetails } from 'service/api';
 import MovieCard from 'components/MovieCard';
 import s from './MovieDetails.module.css';
 
-export function MovieDetails() {
+export default function MovieDetails() {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
-  const location = useLocation();
+  const { state } = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export function MovieDetails() {
       <button
         className={s.backbutton}
         type="button"
-        onClick={() => navigate(location.state?.from || '/')}
+        onClick={() => navigate(state?.from || '/')}
       >
         Go back
       </button>
@@ -35,19 +35,21 @@ export function MovieDetails() {
           <NavLink
             className={s.extralink}
             to="cast"
-            state={location.state && { from: location.state.from }}
+            state={state && { from: state.from }}
           >
             Cast
           </NavLink>
           <NavLink
             className={s.extralink}
             to="review"
-            state={location.state && { from: location.state.from }}
+            state={state && { from: state.from }}
           >
             Review
           </NavLink>
         </nav>
-        <Outlet />
+        <Suspense fallback={<div>Loading extras...</div>}>
+          <Outlet />
+        </Suspense>
       </div>
     </div>
   );
