@@ -11,7 +11,6 @@ export function Reviews() {
     async function fetchReviews() {
       const data = await fetchMovieReviews(Number(movieId));
       setReviews(data.results);
-      console.log(data);
     }
 
     fetchReviews();
@@ -22,7 +21,6 @@ export function Reviews() {
 
   return (
     <>
-      <h3>Reviews</h3>
       <ReviewList reviews={reviews} />
     </>
   );

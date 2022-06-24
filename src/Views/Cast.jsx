@@ -18,7 +18,6 @@ export function Cast() {
 
   return (
     <>
-      <h3>Cast</h3>
       <CastList castList={cast} />
     </>
   );
