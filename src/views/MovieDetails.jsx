@@ -28,7 +28,9 @@ export default function MovieDetails() {
       >
         Go back
       </button>
+
       <MovieCard movieInfo={movieInfo} />
+
       <div className={s.additional}>
         <h2>Additional information</h2>
         <nav className={s.extraNavigation}>
@@ -47,6 +49,7 @@ export default function MovieDetails() {
             Review
           </NavLink>
         </nav>
+
         <Suspense fallback={<div>Loading extras...</div>}>
           <Outlet />
         </Suspense>
