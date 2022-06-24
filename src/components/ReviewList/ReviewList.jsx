@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ReviewItem from 'components/ReviewItem';
 
 export default function ReviewList({ reviews }) {
@@ -9,3 +10,7 @@ export default function ReviewList({ reviews }) {
     </>
   );
 }
+
+ReviewList.propTypes = {
+  reviews: PropTypes.array.isRequired,
+};

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './ReviewItem.module.css';
 
 export default function ReviewItem({ author, content }) {
@@ -8,3 +9,8 @@ export default function ReviewItem({ author, content }) {
     </div>
   );
 }
+
+ReviewItem.propTypes = {
+  author: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
