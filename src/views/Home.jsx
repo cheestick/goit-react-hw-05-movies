@@ -1,5 +1,5 @@
+import MovieList from 'components/MovieList';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { fetchTrendingMovies } from 'service/api';
 
 export default function Home() {
@@ -14,16 +14,5 @@ export default function Home() {
     fetchMovies();
   }, []);
 
-  return (
-    <>
-      <h2>Trending today</h2>
-      <ul>
-        {queryResult.map(({ title, id }) => (
-          <li key={id}>
-            <Link to={`movies/${id}`}>{title}</Link>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  return <MovieList title="Trending today" items={queryResult} />;
 }

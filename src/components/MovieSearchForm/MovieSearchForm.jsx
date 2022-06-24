@@ -1,5 +1,6 @@
+import MovieList from 'components/MovieList';
 import { useState, useEffect } from 'react';
-import { useLocation, useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { fetchMovieByName } from 'service/api';
 import s from './MovieSearchForm.module.css';
 
@@ -7,7 +8,6 @@ export default function MovieSearchForm() {
   const [query, setQuery] = useSearchParams();
   const [searchRequest, setSearchReaquest] = useState('');
   const [searchResult, setSearchResult] = useState([]);
-  const location = useLocation();
 
   useEffect(() => {
     async function fetchMovie(movieTitle) {
@@ -39,15 +39,7 @@ export default function MovieSearchForm() {
       </form>
 
       {searchResult.length > 0 && (
-        <ul>
-          {searchResult.map(({ title, id }) => (
-            <li key={id}>
-              <Link to={`${id}`} state={{ from: location }}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <MovieList title="Search results" items={searchResult} />
       )}
     </>
   );
