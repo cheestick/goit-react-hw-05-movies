@@ -1,0 +1,27 @@
+.navigation {
+  display: flex;
+  gap: 30px;
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  background-color: rgba(25, 25, 25, 0.01);
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.navlink {
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+}
+
+.navlink:visited,
+.navlink:link {
+  color: black;
+}
+
+.navlink:hover {
+  border-bottom: 2px solid black;
+}

@@ -22,9 +22,13 @@ export function MovieDetails() {
       <MovieCard movieInfo={movieInfo} />
       <div className={s.additional}>
         <h2>Additional information</h2>
-        <nav>
-          <NavLink to="cast">Cast</NavLink>
-          <NavLink to="review">Review</NavLink>
+        <nav className={s.extraNavigation}>
+          <NavLink className={s.extralink} to="cast">
+            Cast
+          </NavLink>
+          <NavLink className={s.extralink} to="review">
+            Review
+          </NavLink>
         </nav>
         <Outlet />
       </div>

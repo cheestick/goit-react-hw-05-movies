@@ -1,9 +1,16 @@
 .wrapper {
-  min-width: 640px;
-  max-width: 970px;
   padding: 16px 32px;
 }
 
 .additional {
   margin-top: 30px;
+}
+
+.extraNavigation {
+  display: flex;
+  gap: 20px;
+}
+
+.extralink {
+  text-transform: uppercase;
 }
