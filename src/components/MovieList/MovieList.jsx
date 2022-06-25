@@ -25,5 +25,10 @@ export default function MovieList({ title, items }) {
 
 MovieList.propTypes = {
   title: PropTypes.string,
-  items: PropTypes.array,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+    }).isRequired
+  ),
 };
