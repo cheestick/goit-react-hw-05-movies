@@ -20,5 +20,7 @@ export default function CastList({ castList }) {
 }
 
 CastList.propTypes = {
-  castList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  castList: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.number.isRequired }).isRequired
+  ).isRequired,
 };
