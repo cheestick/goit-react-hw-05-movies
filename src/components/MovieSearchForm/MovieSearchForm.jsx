@@ -6,7 +6,7 @@ import s from './MovieSearchForm.module.css';
 
 export default function MovieSearchForm() {
   const [query, setQuery] = useSearchParams();
-  const [searchRequest, setSearchReaquest] = useState('');
+  const [searchRequest, setSearchReaquest] = useState(query.get('query') || '');
   const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
@@ -23,7 +23,6 @@ export default function MovieSearchForm() {
     e.preventDefault();
     if (!searchRequest) return;
     setQuery({ query: searchRequest });
-    setSearchReaquest('');
   }
 
   return (
